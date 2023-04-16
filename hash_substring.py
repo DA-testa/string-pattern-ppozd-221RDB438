@@ -43,7 +43,7 @@ def get_occurrences(pattern, text):
         multiplier = (multiplier * B) % Q
 
     pattern_hash = get_hash(pattern)
-    text_hash = get_hash(text[:pattern_len])
+    text_hash = get_hash(text[0:pattern_len])
 
     result = []
 
@@ -55,6 +55,7 @@ def get_occurrences(pattern, text):
             text_hash = (text_hash - ord(text[i]) * multiplier) * B + ord(text[i + pattern_len])
             if text_hash < 0:
                 text_hash += Q
+            text_hash %= Q
     # this function should find the occurances using Rabin Karp alghoritm 
 
     # and return an iterable variable
