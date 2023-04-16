@@ -2,7 +2,7 @@
 B = 13
 Q = 256
 def read_input():
-    if input() == 'I':
+    if input().lower() == 'i':
         return (input().rstrip(), input().rstrip())
     else:
         with open("test/06") as f:
