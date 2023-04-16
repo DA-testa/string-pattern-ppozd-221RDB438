@@ -40,7 +40,7 @@ def get_occurrences(pattern, text):
 
     multiplier = 1
     for i in range(1, pattern_len):
-        multiplier = (multiplier * B) % Q
+        multiplier = (multiplier * B)
 
     pattern_hash = get_hash(pattern)
     text_hash = get_hash(text[0:pattern_len])
